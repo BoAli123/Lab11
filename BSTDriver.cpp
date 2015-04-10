@@ -43,18 +43,17 @@ int main()
    delete iter;
 
    
-   //DO THIS
+    //DO THIS
    //test your tree sort method
    CD** unsorted_cds = cds->toArray();
-   CD** sorted_cds = 
+    //cout << "after toArray" << endl;
+   CD** sorted_cds = BinarySearchTree<CD>::treeSort(unsorted_cds, num_items, &CD::compare_items, &CD::compare_keys);
 
-
-
-
-
-
-
-
+   for (int i = 0; i < num_items; i++)
+   {
+	   sorted_cds[i]->getKey()->displayString();
+	   cout << endl;
+   }
 
    deleteCDs(cds);
    delete cds;
